@@ -62,3 +62,32 @@ const data = {
   const {name: {firstName, lastName}, isStudent, favoriteFootballTeam, hometown: {city, country}} = data;
   
   console.log(`${firstName} ${lastName}'s favorite football team is ${favoriteFootballTeam} and she is from ${city},${country}.`)
+
+  // arrays
+
+//es5
+const campuses = [`madrid`, `barcelona`, `miami`];
+
+// const firstCampus = campuses[0];
+// console.log(firstCampus);
+
+const [firstCampus, secondCampus, thirdCampus] = campuses;
+
+console.log(firstCampus, secondCampus, thirdCampus);
+
+//nested arrays
+
+const europeanCampuses = [
+  [`madrid`, `es`],
+  [`barcelona`, `es`],
+  [`berlin`, `de`],
+  [`paris`, `fr`],
+]
+
+const [
+  [campusSpain1],
+  [campusSpain2, country],
+  [campus3, theCountry]
+] = europeanCampuses;
+
+console.log(campusSpain1, campusSpain2, campus3);
