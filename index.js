@@ -91,3 +91,28 @@ const [
 ] = europeanCampuses;
 
 console.log(campusSpain1, campusSpain2, campus3);
+
+// mixed objects and arrays
+
+const customer = {
+  name: {
+    firstName: `ivan`,
+    lastName: `zoro`
+  },
+  age: 32,
+  preferences : [
+    {
+      tech: [`cameras`, `smartwatches`],
+      books: [`science fiction`, `coding`]
+    }
+  ]
+}
+
+const {
+  name: {firstName, lastName},
+  age,
+  preferences : [{tech: technology, books: literature}],
+}= customer;
+
+console.log(firstName, lastName, age);
+console.log(technology, literature);
