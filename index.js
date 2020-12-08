@@ -143,3 +143,57 @@ function getIngredients({leaf, veggie, seed, nut, liquid}) {
 }
 getIngredients(greenSmoothie);
 // => expected: // To make a green smoothie, you should add: spinach, bok choy, ground flex seeds, peanut and almond milk.
+
+
+// ...  
+
+// spread operator 
+const webStudents = [`ida`, `anna`];
+const uxStudents = [`sandra`, `stefan`];
+
+// es5
+const allStudents = [];
+webStudents.forEach(students => {
+  allStudents.push(students);
+});
+uxStudents.forEach(students => {
+  allStudents.push(students);
+});
+
+
+// es6
+const ironStudents = [...webStudents, ...uxStudents];
+console.log(ironStudents);
+
+//es5
+const webStudentsCopy = webStudents.slice();
+console.log(webStudentsCopy);
+
+//es6
+
+const uxStudentsCopy = [...uxStudents];
+console.log(uxStudentsCopy);
+
+
+
+//rest parameter 
+
+function add(){
+  let sum = 0;
+  for(let i = 0; i < arguments.length; i++){
+    sum += arguments[i];
+  }
+
+  return sum;
+}
+
+add();
+add(1, 2, 5, 8);
+
+function add1(...args){
+  return args.reduce((sum, next) => {
+    sum + next;
+  });
+}
+
+add1(5, 5, 5);
